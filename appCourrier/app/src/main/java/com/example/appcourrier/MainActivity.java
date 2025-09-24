@@ -50,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
+                if (id == R.id.nav_profile) {
+                    Intent intent = new Intent(MainActivity.this, Perfil_Activity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish(); // opcional, para cerrar esta Activity
+                    return true;
+                }
 
                 return false;
             }

@@ -23,6 +23,10 @@
         <activity android:name=".nuevaCompraActivity" />
         <activity android:name=".ComprasActivity" />
         <activity android:name=".EnviosActivity" />
+        <activity android:name=".Perfil_Activity" />
+        <activity android:name=".datosPerfilActivity" />
+
+
 
 
     </application>

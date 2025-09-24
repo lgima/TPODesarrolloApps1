@@ -9,40 +9,42 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class EnviosActivity extends AppCompatActivity {
+public class Perfil_Activity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_envios); //
+        setContentView(R.layout.perfil_activity); //
         bottomNav = findViewById(R.id.bottomNav);
+
+        bottomNav.setSelectedItemId(R.id.nav_profile);
+
+        findViewById(R.id.cardCuenta).setOnClickListener(v -> {
+            Intent intent = new Intent(Perfil_Activity.this, datosPerfilActivity.class);
+            startActivity(intent);
+        });
 
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
                 int id = item.getItemId();
 
+                if (id == R.id.nav_profile) {
+                    return true;
+                }
+
                 if (id == R.id.nav_add) {
-                    // Abrir NuevaCompraActivity
-                    Intent intent = new Intent(EnviosActivity.this, nuevaCompraActivity.class);
+                    Intent intent = new Intent(Perfil_Activity.this, nuevaCompraActivity.class);
                     startActivity(intent);
                     return true;
                 }
 
                 if (id == R.id.nav_home) {
-                    // Volver a Home sin duplicar Activities
-                    Intent intent = new Intent(EnviosActivity.this, MainActivity.class);
+                    Intent intent = new Intent(Perfil_Activity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
-                    return true;
-                }
-                if (id == R.id.nav_profile) {
-                    Intent intent = new Intent(EnviosActivity.this, Perfil_Activity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
+                    finish();
                     return true;
                 }
 
