@@ -9,14 +9,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class ComprasActivity extends AppCompatActivity {
+public class nuevaCompraActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compras); //
+        setContentView(R.layout.activity_nueva_compra); // tu layout con header + bottomNav
+
         bottomNav = findViewById(R.id.bottomNav);
+
+        // 👇 Siempre marcar "+" cuando entras a esta pantalla
+        bottomNav.setSelectedItemId(R.id.nav_add);
+
+        findViewById(R.id.btnCancelarnuevaCompra).setOnClickListener(v -> {
+            Intent intent = new Intent(nuevaCompraActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -24,15 +33,13 @@ public class ComprasActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.nav_add) {
-                    // Abrir NuevaCompraActivity
-                    Intent intent = new Intent(ComprasActivity.this, nuevaCompraActivity.class);
-                    startActivity(intent);
+                    // Ya estás en NuevaCompra, no hacer nada
                     return true;
                 }
 
                 if (id == R.id.nav_home) {
                     // Volver a Home sin duplicar Activities
-                    Intent intent = new Intent(ComprasActivity.this, MainActivity.class);
+                    Intent intent = new Intent(nuevaCompraActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish(); // opcional, para cerrar esta Activity

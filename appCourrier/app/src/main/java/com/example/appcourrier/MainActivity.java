@@ -23,6 +23,17 @@ public class MainActivity extends AppCompatActivity {
         // 👇 Siempre marcar Home cuando entras a esta pantalla
         bottomNav.setSelectedItemId(R.id.nav_home);
 
+        findViewById(R.id.btnCompras).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ComprasActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btnEnvios).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EnviosActivity.class);
+            startActivity(intent);
+        });
+
+
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
@@ -35,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.nav_add) {
                     // Abrir NuevaCompraActivity
-                    Intent intent = new Intent(MainActivity.this, ComprasActivity.class);
+                    Intent intent = new Intent(MainActivity.this, nuevaCompraActivity.class);
                     startActivity(intent);
                     return true;
                 }
