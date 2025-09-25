@@ -14,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Avatar -->
         <ImageView
             android:id="@+id/imgAvatar"
             android:layout_width="60dp"
@@ -24,7 +23,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <!-- Texto principal -->
         <TextView
             android:id="@+id/tvSaludo"
             android:layout_width="wrap_content"
@@ -39,7 +37,6 @@
             app:layout_constraintEnd_toStartOf="@id/imgAvatar"
             app:layout_constraintHorizontal_bias="0"/>
 
-        <!-- Subtítulo -->
         <TextView
             android:id="@+id/tvMail"
             android:layout_width="0dp"

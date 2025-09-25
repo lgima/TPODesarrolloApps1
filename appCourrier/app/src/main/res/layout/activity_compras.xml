@@ -4,48 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="@drawable/header_background"
-        android:orientation="horizontal"
         android:padding="24dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:id="@+id/imgCompras"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/ic_compras"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <!-- Texto principal -->
+        <TextView
+            android:id="@+id/tvCompras"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:text="Tus compras"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgCompras"
+            app:layout_constraintTop_toTopOf="@id/imgCompras"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <TextView
-                android:id="@+id/headerTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tus compras"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/headerSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Compras que ya nos informaste, cuando lleguen al deposito las podras enviar"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"/>
-        </LinearLayout>
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvMensaje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Compras que ya nos informaste, cuando lleguen al deposito las podras enviar"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tvCompras"
+            app:layout_constraintTop_toBottomOf="@id/tvCompras"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/imgCompras"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardPaquete"
         android:layout_width="0dp"

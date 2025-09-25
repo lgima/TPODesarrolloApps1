@@ -5,49 +5,51 @@
     android:layout_height="match_parent">
 
     <!-- Header -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="@drawable/header_background"
-        android:orientation="horizontal"
         android:padding="24dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_box"
-            />
+            android:id="@+id/imgNuevacompra"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_paquetes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvNuevacompra"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:text="Nueva compra"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgNuevacompra"
+            app:layout_constraintTop_toTopOf="@id/imgNuevacompra"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <TextView
-                android:id="@+id/headerTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nueva compra"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvMensaje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Informanos sobre tu compra"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tvNuevacompra"
+            app:layout_constraintTop_toBottomOf="@id/tvNuevacompra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/imgNuevacompra"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/headerSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Informanos sobre tu compra"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- CONTENIDO: Formulario -->
+    <!-- Formulario -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
