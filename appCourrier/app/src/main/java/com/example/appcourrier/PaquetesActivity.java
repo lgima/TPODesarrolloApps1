@@ -9,51 +9,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
-
+public class PaquetesActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_paquetes); //
         bottomNav = findViewById(R.id.bottomNav);
-
-        //  marcar Home cuando estas en la pantalla
-        bottomNav.setSelectedItemId(R.id.nav_home);
-
-        findViewById(R.id.btnCompras).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ComprasActivity.class);
-            startActivity(intent);
-        });
-
-        findViewById(R.id.btnPaquetes).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PaquetesActivity.class);
-            startActivity(intent);
-        });
-
-        findViewById(R.id.btnEnvios).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, EnviosActivity.class);
-            startActivity(intent);
-        });
-
 
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.nav_home) {
-                    return true;
-                }
-
                 if (id == R.id.nav_add) {
-                    Intent intent = new Intent(MainActivity.this, nuevaCompraActivity.class);
+                    Intent intent = new Intent(PaquetesActivity.this, nuevaCompraActivity.class);
                     startActivity(intent);
                     return true;
                 }
+
+                if (id == R.id.nav_home) {
+                    Intent intent = new Intent(PaquetesActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                }
                 if (id == R.id.nav_profile) {
-                    Intent intent = new Intent(MainActivity.this, Perfil_Activity.class);
+                    Intent intent = new Intent(PaquetesActivity.this, Perfil_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();

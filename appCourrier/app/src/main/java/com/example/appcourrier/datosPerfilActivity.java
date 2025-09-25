@@ -35,25 +35,23 @@ public class datosPerfilActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.nav_add) {
-                    // Abrir NuevaCompraActivity
                     Intent intent = new Intent(datosPerfilActivity.this, nuevaCompraActivity.class);
                     startActivity(intent);
                     return true;
                 }
 
                 if (id == R.id.nav_home) {
-                    // Volver a Home sin duplicar Activities
                     Intent intent = new Intent(datosPerfilActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
+                    finish();
                     return true;
                 }
                 if (id == R.id.nav_profile) {
                     Intent intent = new Intent(datosPerfilActivity.this, Perfil_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
+                    finish();
                     return true;
                 }
 

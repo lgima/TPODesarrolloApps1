@@ -15,11 +15,11 @@ public class nuevaCompraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nueva_compra); // tu layout con header + bottomNav
+        setContentView(R.layout.activity_nueva_compra);
 
         bottomNav = findViewById(R.id.bottomNav);
 
-        // 👇 Siempre marcar "+" cuando entras a esta pantalla
+        //  marcar + cuando estas en esa pantalla
         bottomNav.setSelectedItemId(R.id.nav_add);
 
         findViewById(R.id.btnCancelarnuevaCompra).setOnClickListener(v -> {
@@ -33,23 +33,21 @@ public class nuevaCompraActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.nav_add) {
-                    // Ya estás en NuevaCompra, no hacer nada
                     return true;
                 }
 
                 if (id == R.id.nav_home) {
-                    // Volver a Home sin duplicar Activities
                     Intent intent = new Intent(nuevaCompraActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
+                    finish();
                     return true;
                 }
                 if (id == R.id.nav_profile) {
                     Intent intent = new Intent(nuevaCompraActivity.this, Perfil_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                    finish(); // opcional, para cerrar esta Activity
+                    finish();
                     return true;
                 }
 
