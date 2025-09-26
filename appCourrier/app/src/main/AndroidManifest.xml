@@ -26,6 +26,8 @@
         <activity android:name=".Perfil_Activity" />
         <activity android:name=".datosPerfilActivity" />
         <activity android:name=".PaquetesActivity" />
+        <activity android:name=".detalleCompra" />
+
 
 
 

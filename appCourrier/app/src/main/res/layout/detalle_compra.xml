@@ -19,7 +19,7 @@
             android:id="@+id/imgCompras"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_compras"
+            android:src="@drawable/ic_paquetes"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -37,20 +37,22 @@
             app:layout_constraintTop_toTopOf="@id/imgCompras"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+
+
         <TextView
             android:id="@+id/tvMensaje"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Compras que ya nos informaste, cuando lleguen al deposito las podras enviar"
+            android:text="Compra 5"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@id/tvCompras"
             app:layout_constraintTop_toBottomOf="@id/tvCompras"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/imgCompras"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardPaquetecompras"
+        android:id="@+id/cardPaquete"
         android:layout_width="0dp"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
@@ -66,47 +68,74 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp">
-            <FrameLayout
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_circle_purple">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_box" />
-            </FrameLayout>
+            android:orientation="vertical"
+            android:padding="8dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="8dp">
+                android:text="Comprado en: Amazon"
+                android:padding="4dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Paquete 5"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enviado"
-                    android:textSize="12sp"
-                    android:textColor="@android:color/darker_gray" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ver detalles"
-                    android:textColor="@color/purple_700"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre: Nokia 9300"
+                android:padding="4dp"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor: 250 U$D"
+                android:padding="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enviado por: Fedex"
+                android:padding="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Número de tracking: 123456"
+                android:padding="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de envío estimada: 30 de febrero"
+                android:padding="4dp"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.bottomnavigation.BottomNavigationView

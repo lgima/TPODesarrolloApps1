@@ -9,19 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class ComprasActivity extends AppCompatActivity {
+public class detalleCompra extends AppCompatActivity {
     private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compras); //
+        setContentView(R.layout.detalle_compra); //
         bottomNav = findViewById(R.id.bottomNav);
 
-        findViewById(R.id.cardPaquetecompras).setOnClickListener(v -> {
-            Intent intent = new Intent(ComprasActivity.this, detalleCompra.class);
-            startActivity(intent);
-        });
 
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -29,20 +25,20 @@ public class ComprasActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.nav_add) {
-                    Intent intent = new Intent(ComprasActivity.this, nuevaCompraActivity.class);
+                    Intent intent = new Intent(detalleCompra.this, nuevaCompraActivity.class);
                     startActivity(intent);
                     return true;
                 }
 
                 if (id == R.id.nav_home) {
-                    Intent intent = new Intent(ComprasActivity.this, MainActivity.class);
+                    Intent intent = new Intent(detalleCompra.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();
                     return true;
                 }
                 if (id == R.id.nav_profile) {
-                    Intent intent = new Intent(ComprasActivity.this, Perfil_Activity.class);
+                    Intent intent = new Intent(detalleCompra.this, Perfil_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();
